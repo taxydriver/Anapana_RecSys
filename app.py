@@ -141,7 +141,7 @@ for r in range(rows):
         m = ID2MOVIE[mid]
         with cols[c_idx]:
             poster_url = f"{POSTER_BASE}{m['poster_path']}" if m["poster_path"] else f"https://picsum.photos/seed/{mid}/300/450"
-            st.image(poster_url, use_container_width=True)
+            st.image(poster_url, use_column_width=True)
             st.markdown(f"**{m['title']}** ({m['year']})")
             st.caption(" • ".join(GENRES.get(gid, "?") for gid in m.get("genre_ids", [])) or "No genres")
 
